@@ -13,3 +13,8 @@ jobs:
   include:
     - stage: test
       script: ./gradlew test
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: test-springboot
+  #on:
