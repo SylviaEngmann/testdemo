@@ -21,6 +21,8 @@ env:
     - PGUSER=travis
 before_script:
   - psql --version
+  - psql -U travis < test.sql
+  - psql -c 'select * from student;' -U travis
 ###
 jobs:
   include:
